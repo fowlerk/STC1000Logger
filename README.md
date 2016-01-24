@@ -1,12 +1,5 @@
----
-title: STC-1000+ Wireless Data Logger README
-layout: post
-author: keith.fowler.kf
-permalink: /stc-1000+-wireless-data-logger/
-source-id: 1VZmz7aX0v_MfEEKwEKLgRd9ZBtlN3Vq4hYH7ZXHTBKE
-published: true
----
-STC-1000+ Wireless Data Logger
+
+##STC-1000+ Wireless Data Logger
 
 This project creates a wireless data logger to interface with the STC-1000+ dual-stage temperature controller, running the (great!) communications firmware designed and written by Mats Staffansson.  Let me take the opportunity to thank Mats for all of his great contributions to the homebrewing community through his tireless efforts in creating the various versions of the
 
@@ -31,24 +24,6 @@ Though there are a number of free data-streaming services available on-line, I d
 ### The OLED Library
 
 One of the downsides for working with the ESP-8266 is that some of the libraries still have not been ported to this platform for the Arduino IDE (which is what I used for my efforts).  When I decided to use the SSD1306 controller-based OLED, I found this to be a minor stumbling block initially, but eventually discovered someone had been able to make minor edits to the Adafruit library to support this.  It essentially amounts to a couple of trivial edits (additions) to one of the library files (Adafruit_GFX.cpp), and is described here:  [https://github.com/somhi/ESP_SSD1306](https://github.com/somhi/ESP_SSD1306)
-
-/* For the Adafruit_GFX library to work with the ESP8266, please be sure to include the "#elif defined ESP8266" line in Adafruit_GFX.cpp
-
-Otherwise comment the line   #define pgm_read_byte(addr)...
-
-#ifdef __AVR__
-
- #include <avr/pgmspace.h>
-
-#elif defined ESP8266	//Added for compatibility with ESP8266 BOARD
-
-#else
-
- #define pgm_read_byte(addr) (*(const unsigned char *)(addr))
-
-#endif
-
-*/
 
 I saved the edits to a copy of the original library called ESP_SSD1306 so that I could use either the original or the modified one going forward.  (Thanks to SOMHI for his efforts on this, and Adafruit / LadyAda for their work in creating the original library!)
 
