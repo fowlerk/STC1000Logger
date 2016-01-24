@@ -1,9 +1,7 @@
 
 ##STC-1000+ Wireless Data Logger
 
-This project creates a wireless data logger to interface with the STC-1000+ dual-stage temperature controller, running the (great!) communications firmware designed and written by Mats Staffansson.  Let me take the opportunity to thank Mats for all of his great contributions to the homebrewing community through his tireless efforts in creating the various versions of the
-
-STC firmware.  Without him, none of this would have been possible.
+This project creates a wireless data logger to interface with the STC-1000+ dual-stage temperature controller, running the (great!) communications firmware designed and written by Mats Staffansson.  Let me take the opportunity to thank Mats for all of his great contributions to the homebrewing community through his tireless efforts in creating the various versions of the STC firmware.  Without him, none of this would have been possible.
 
 This code retrieves key data from the STC-1000 on a periodic basis as defined in the code.  The parameters retrieved and logged are:  setpoint, current probe temperature, status of the cooling and heating relays, run-mode (profile or thermostat), step (for profile), and duration hours.
 
